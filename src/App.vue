@@ -31,7 +31,7 @@
             <v-list-item-content right>{{item.title}}</v-list-item-content>
            </v-list-item>
          </v-list-item>
-          <v-list-item @click="onLogout" v-if="userIsAuthenticated"> 
+          <v-list-item class="ml-4" @click="onLogout" v-if="userIsAuthenticated"> 
             <v-list-item-action v-if="userIsAuthenticated">
              <v-icon left>mdi-plex</v-icon>
              </v-list-item-action>

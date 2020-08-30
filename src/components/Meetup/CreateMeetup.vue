@@ -42,14 +42,20 @@
                     id="image-url"
                     required
                     v-model="imageUrl"
-                    :rules="[()=> imageUrl.length > 0 || 'Required field']"
+                    :rules="imageFieldRules"
                     >
                     </v-text-field>
             </v-flex>
         </v-layout>
         <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
-                <v-img :src="imageUrl" height="250px"></v-img>
+                <v-img 
+                :src="imageUrl" 
+                height="250px" 
+                contain 
+                @error="isImageLoaded = false"
+                @load="isImageLoaded = true"
+                ></v-img>
             </v-flex>
         </v-layout>
         <v-layout row>
@@ -101,7 +107,12 @@ export default {
             imageUrl:'',
             description:'',
             time:'',
-            date:''
+            date:'',
+            isImageLoaded: Boolean,
+            imageFieldRules:[
+                ()=> this.isImageLoaded == false || 'Bad URL',
+                ()=> this.imageUrl.length > 0 || 'Required field'
+            ]
         }
     },
     computed:{
@@ -109,7 +120,8 @@ export default {
             return this.title !== "" &&
             this.location !== "" &&
             this.imageUrl !== "" &&
-            this.description !== ""
+            this.description !== "" &&
+            this.isImageLoaded
         },
         submitableDandT(){
             const date = new Date(this.date)
