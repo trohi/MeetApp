@@ -1,7 +1,7 @@
 export default {
     loadedMeetups:state=>{
         return state.loadedMeetups.sort((meetup1, meetup2)=>{
-            return meetup1.date > meetup2.date
+            return meetup1.date < meetup2.date
         })
     },
     featuredMeetups:(state, getters)=>{

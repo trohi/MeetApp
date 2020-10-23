@@ -46,7 +46,7 @@
 export default {
     computed:{
         meetups(){
-            return this.$store.getters.featuredMeetups
+            return this.$store.getters.loadedMeetups
         },
         loading(){
             return this.$store.getters.loading

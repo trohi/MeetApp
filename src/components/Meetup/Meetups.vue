@@ -37,7 +37,7 @@
 export default {
     computed:{
         meetups(){
-            return this.$store.getters.featuredMeetups
+            return this.$store.getters.loadedMeetups
         }
     }
 }
