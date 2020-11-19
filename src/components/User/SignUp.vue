@@ -8,7 +8,7 @@
         <v-layout row>
             <v-flex xs12 sm6 offset-sm3 dark>
                 <v-card>
-                    <v-card-text>
+                    <v-card-text id="formWrapper">
                         <v-container>
                             <form @submit.prevent="onSignup">
                                 <v-layout row>
@@ -50,7 +50,13 @@
                                 </v-layout>
                                 <v-layout row>
                                     <v-flex xs12>
-                                        <v-btn type="submit" :disabled="loading" :loading="loading">
+                                        <v-btn 
+                                        type="submit" 
+                                        :disabled="loading" 
+                                        :loading="loading"
+                                        color="indigo"
+                                        outlined
+                                        >
                                             Sign up
                                             <span slot="loader" class="custom-loader">
                                                 <v-icon light>mdi-amazon-alexa</v-icon>

@@ -6,9 +6,9 @@
             </v-flex>
         </v-layout>
         <v-layout row>
-            <v-flex xs12 sm6 offset-sm3 dark>
-                <v-card>
-                    <v-card-text>
+            <v-flex xs12 sm6 offset-sm3 dark >
+                <v-card >
+                    <v-card-text id="formWrapper">  
                         <v-container>
                             <form @submit.prevent="onSignin">
                                 <v-layout row>
@@ -37,7 +37,13 @@
                                 </v-layout>
                                 <v-layout row>
                                     <v-flex xs12>
-                                        <v-btn type="submit" :disabled="loading" :loading="loading">
+                                        <v-btn 
+                                        type="submit" 
+                                        :disabled="loading" 
+                                        :loading="loading"
+                                        color="blue"
+                                        outlined
+                                        >
                                             Sign in
                                              <span slot="loader" class="custom-loader">
                                                 <v-icon light>mdi-amazon-alexa</v-icon>
@@ -91,3 +97,14 @@ export default {
     }
 }
 </script>
+
+<style >
+#formWrapper{
+    margin-top:20%;
+    border:0.2vw solid rgb(178, 178, 248) !important
+
+/*
+box-shadow: 2px 1px 6px 2px rgb(138, 138, 226)
+*/
+}
+</style>
